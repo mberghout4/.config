@@ -1,0 +1,62 @@
+" Environment
+" {
+      filetype off    " required
+      " Add vundle to the runtime path
+      set rtp+=~/.config/nvim/bundle/Vundle.vim
+" }
+
+" Bundles
+" {
+    call vundle#begin("~/.config/nvim/bundle") " MUST be called before any Plugins are named
+
+    " Let Vundle manage Vundle (Required)
+    Plugin 'VundleVim/Vundle.vim'
+
+    " Dependencies
+    " {
+        Plugin 'MarcWeber/vim-addon-mw-utils'
+        Plugin 'tomtom/tlib_vim'
+        Plugin 'mileszs/ack.vim' " Adds ack functionality to vim
+        Plugin 'tpope/vim-obsession' " Easy UI for saving and restoring vim sessions
+    " }
+
+    " Color Themes
+    " {
+        Plugin 'altercation/vim-colors-solarized'
+        Plugin 'spf13/vim-colors'
+        Plugin 'flazz/vim-colorschemes'
+    " }
+
+    " General
+    " {
+        Plugin 'tpope/vim-surround' " Edit surrounding characters/strings
+        Plugin 'tpope/vim-repeat'   " Enable '.' functionality for plugins
+    " }
+
+    " UI Improvements
+    " {
+        Plugin 'scrooloose/nerdtree'              " A File Tree
+        Plugin 'scrooloose/nerdcommenter'         " Easily toggle comments
+        Plugin 'nathanaelkane/vim-indent-guides'  " Show indent guides
+        Plugin 'vim-airline/vim-airline'          " Improve the status line appearance
+        Plugin 'vim-airline/vim-airline-themes'
+        Plugin 'powerline/fonts'
+        Plugin 'terryma/vim-multiple-cursors'
+    " }
+
+    " GIT
+    " {
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'airblade/vim-gitgutter'
+    " }
+
+    " Syntactic Completion
+    " {
+        Plugin 'ycm-core/YouCompleteMe'
+        Plugin 'SirVer/ultisnips'
+        Plugin 'honza/vim-snippets'
+    " }
+
+    call vundle#end()
+    filetype plugin indent on
+" }

@@ -12,6 +12,9 @@ sudo apt upgrade
     ln -s ~/.config/bash/.bash_aliases ~/.bash_aliases
     ln -s ~/.config/bash/.bash_logout ~/.bash_logout
 
+    # Git
+    ln -s ~/.config/git/.gitconfig ~/.gitconfig
+
     # tmux
     ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
 
@@ -25,6 +28,10 @@ sudo apt upgrade
     # {
         sudo apt install ack
         sudo apt install unzip
+
+        # Make the defualt editor vim
+        export VISUAL=nvim
+        export EDITOR="$VISUAL"
     # }
 
     # C++
@@ -33,6 +40,12 @@ sudo apt upgrade
         sudo apt install build-essential
         sudo apt install cmake
         sudo apt install make
+    # }
+
+    # Git
+    # {
+        git config --global user.email 'mberghout4@gmail.com'
+        git config --global user.name 'Matt Berghout'
     # }
 
     # Python 3

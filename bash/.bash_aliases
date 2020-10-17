@@ -24,3 +24,4 @@ alias ....="c ../../.."
 
 # vim and nvim aliases
 alias vi="nvim"
+alias vim="nvim"

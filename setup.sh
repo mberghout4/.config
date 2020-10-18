@@ -5,50 +5,68 @@ sudo apt upgrade
 
 # Clone dot-files repository and link to /home
 # {
-    git clone https://github.com/mberghout4/.config ~/
+    #git clone https://github.com/mberghout4/.config ~/
 
     # bash
-    ln -s ~/.config/bash/.bashrc ~/.bashrc
-    ln -s ~/.config/bash/.bash_aliases ~/.bash_aliases
-    ln -s ~/.config/bash/.bash_logout ~/.bash_logout
+    if test -f ~/.bashrc; then
+        rm ~/.bashrc
+    fi
+	ln -s ~/.config/bash/.bashrc ~/.bashrc
+    if test -f ~/.bash_aliases; then
+        rm ~/.bash_aliases
+    fi
+	ln -s ~/.config/bash/.bash_aliases ~/.bash_aliases
+    if test -f ~/.bash_logout; then
+        rm ~/.bash_logout
+    fi
+	ln -s ~/.config/bash/.bash_logout ~/.bash_logout
 
-    # Git
-    ln -s ~/.config/git/.gitconfig ~/.gitconfig
+	# Git
+    if test -f ~/.gitconfig; then
+        rm ~/.gitconfig
+    fi
+	ln -s ~/.config/git/.gitconfig ~/.gitconfig
 
-    # tmux
-    ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+	# tmux
+    if test -f ~/.tmux.conf; then
+        rm ~/.tmux.conf
+    fi
+	ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
 
-    # VIM
-    ln -s ~/.config/nvim/init.vim ~/.vimrc
-# }
+	# VIM
+    if test -f ~/.vimrc; then
+        rm ~/.vimrc
+    fi
+	ln -s ~/.config/nvim/init.vim ~/.vimrc
+	# }
 
-# Install/setup Software
-# {
-    # bash tools
-    # {
-        sudo apt install ack
-        sudo apt install unzip
+	# Install/setup Software
+	# {
+	# bash tools
+	# {
+	sudo apt install ack
+	sudo apt install unzip
 
-        # Make the defualt editor vim
-        export VISUAL=nvim
-        export EDITOR="$VISUAL"
-    # }
+	# Make the defualt editor vim
+	export VISUAL=nvim
+	export EDITOR="$VISUAL"
+	# }
 
-    # C++
-    # {
-        #sudo apt install g++
-        sudo apt install build-essential
-        sudo apt install cmake
-        sudo apt install make
-    # }
+	# C++
+	# {
+	#sudo apt install g++
+	sudo apt install build-essential
+	sudo apt install cmake
+	sudo apt install make
+	# }
 
-    # Git
-    # {
-        git config --global user.email 'mberghout4@gmail.com'
-        git config --global user.name 'Matt Berghout'
-    # }
+	# Git
+	# {
+	git config --global user.email 'mberghout4@gmail.com'
+	git config --global user.name 'Matt Berghout'
+	# }
 
-    # Python 3
+	# Python 3
     # {
         sudo apt install python3-dev
     # }
@@ -64,10 +82,10 @@ sudo apt upgrade
     # {
         sudo apt install neovim
 
-        git clone https://github.com/VundleVim/Vundle.vim ~/.config/nvim/bundle/
+        git clone https://github.com/VundleVim/Vundle.vim ~/.config/nvim/bundle/Vundle.vim
         nvim -c ":PluginInstall" -c ":qa"
 
-        cd ~/.config/nvim/bundles/YouCompleteMe
+        cd ~/.config/nvim/bundle/YouCompleteMe
         python3 install.py --clangd-completer
     # }
 # }
